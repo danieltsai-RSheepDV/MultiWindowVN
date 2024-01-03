@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp2hafa5ktis0"]
+
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs" id="1_7u53n"]
+[ext_resource type="PackedScene" uid="uid://doqmab63nqdns" path="res://VN/OptionView/option_view.tscn" id="2_p25nh"]
+
+[node name="Option List View" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_7u53n")
+optionViewPrefab = ExtResource("2_p25nh")
+lastLineTextPath = NodePath("VSplitContainer/Previous Line")
+viewControlPath = NodePath("VSplitContainer/Options")
+boxContainerPath = NodePath("VSplitContainer/Options")
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Previous Line" type="RichTextLabel" parent="VSplitContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3

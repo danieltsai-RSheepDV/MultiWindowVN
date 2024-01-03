@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://u8clso2bojiq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddwj"]
+bg_color = Color(0, 0, 0, 0.427451)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="App" type="LinkButton" groups=["App"]]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = -1
+anchor_right = 0.130208
+anchor_bottom = 0.231481
+offset_right = -150.0
+offset_bottom = -150.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+offset_left = 27.0
+offset_top = 10.0
+offset_right = 122.0
+offset_bottom = 105.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 118.0
+offset_right = 140.0
+offset_bottom = 140.0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 15
+text = "Messenger"
+horizontal_alignment = 1
+vertical_alignment = 2

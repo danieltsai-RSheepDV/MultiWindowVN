@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=3 uid="uid://bydtdwaqwarv6"]
+
+[ext_resource type="PackedScene" uid="uid://y6wx86yi3w26" path="res://Phone/Screens/Home Screen/home_screen.tscn" id="1_6788m"]
+[ext_resource type="Script" path="res://Phone/phone.cs" id="1_o55ee"]
+[ext_resource type="Texture2D" uid="uid://bxx0oqg33cbc7" path="res://Phone/Screens/Home Screen/nav-arrow-left.svg" id="3_4kobu"]
+[ext_resource type="PackedScene" uid="uid://rv1wt581lkxp" path="res://Phone/Screens/Messenger/messenger.tscn" id="3_g8kbk"]
+[ext_resource type="Texture2D" uid="uid://h0wweraw136g" path="res://Phone/Screens/Home Screen/home.svg" id="4_7i1ed"]
+[ext_resource type="Texture2D" uid="uid://c7wldb38najsx" path="res://Phone/Screens/Home Screen/menu.svg" id="5_5lij3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwd5f"]
+bg_color = Color(0.964706, 0.4, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t28bh"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Phone" type="Control" node_paths=PackedStringArray("contentRoot")]
+layout_mode = 3
+anchor_right = 0.5625
+anchor_bottom = 1.77778
+offset_bottom = 179.999
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o55ee")
+contentRoot = NodePath("Content")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwd5f")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Home Screen" parent="Content" instance=ExtResource("1_6788m")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+
+[node name="Messenger" parent="Content" instance=ExtResource("3_g8kbk")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Files" type="VBoxContainer" parent="Content"]
+process_mode = 4
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Camera" type="VBoxContainer" parent="Content"]
+process_mode = 4
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Contacts" type="VBoxContainer" parent="Content"]
+process_mode = 4
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Top Bar" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 648.0
+offset_bottom = 66.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "6:02"
+
+[node name="Battery" type="Label" parent="Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100%"
+horizontal_alignment = 2
+
+[node name="Bottom Buttons" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t28bh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Bottom Buttons" type="CenterContainer" parent="Bottom Buttons/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Buttons/MarginContainer/Bottom Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Back" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4kobu")
+texture_pressed = ExtResource("3_4kobu")
+texture_hover = ExtResource("3_4kobu")
+texture_disabled = ExtResource("3_4kobu")
+texture_focused = ExtResource("3_4kobu")
+
+[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_7i1ed")
+texture_pressed = ExtResource("4_7i1ed")
+texture_hover = ExtResource("4_7i1ed")
+texture_disabled = ExtResource("4_7i1ed")
+texture_focused = ExtResource("4_7i1ed")
+
+[node name="Multi" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_5lij3")
+texture_pressed = ExtResource("5_5lij3")
+texture_hover = ExtResource("5_5lij3")
+texture_disabled = ExtResource("5_5lij3")
+texture_focused = ExtResource("5_5lij3")
+
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Back" to="." method="_on_back_pressed"]

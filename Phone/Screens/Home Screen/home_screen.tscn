@@ -1,0 +1,219 @@
+[gd_scene load_steps=5 format=3 uid="uid://y6wx86yi3w26"]
+
+[ext_resource type="PackedScene" uid="uid://u8clso2bojiq" path="res://Phone/Screens/Home Screen/Apps/app.tscn" id="1_e3b6a"]
+[ext_resource type="Script" path="res://Phone/Screens/Home Screen/Apps/OpenApp.cs" id="2_w8emj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npgh8"]
+bg_color = Color(0, 0, 0, 0.439216)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddwj"]
+bg_color = Color(0, 0, 0, 0.427451)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Home Screen" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Content" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Content/VSplitContainer"]
+custom_minimum_size = Vector2(0, 375)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/VSplitContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="Date" type="Label" parent="Content/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SUN, December 24"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="Content/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "6:03"
+
+[node name="GridContainer" type="GridContainer" parent="Content/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="App" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App2" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App3" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App4" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App5" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App6" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="App7" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+layout_mode = 2
+script = ExtResource("2_w8emj")
+
+[node name="Shelf" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Shelf"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_npgh8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shelf/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="App" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 2
+script = ExtResource("2_w8emj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App"]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
+
+[node name="App2" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 2
+script = ExtResource("2_w8emj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App2"]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
+
+[node name="App3" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 2
+script = ExtResource("2_w8emj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App3"]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
+
+[node name="App4" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+custom_minimum_size = Vector2(125, 150)
+layout_mode = 2
+script = ExtResource("2_w8emj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App4"]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -47.5
+offset_right = 47.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
+
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App" to="Content/VSplitContainer/GridContainer/App" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App2" to="Content/VSplitContainer/GridContainer/App2" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App3" to="Content/VSplitContainer/GridContainer/App3" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App4" to="Content/VSplitContainer/GridContainer/App4" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App5" to="Content/VSplitContainer/GridContainer/App5" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App6" to="Content/VSplitContainer/GridContainer/App6" method="OnPressed"]
+[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App7" to="Content/VSplitContainer/GridContainer/App7" method="OnPressed"]
+[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App" to="Shelf/PanelContainer/HBoxContainer/App" method="OnPressed"]
+[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App2" to="Shelf/PanelContainer/HBoxContainer/App2" method="OnPressed"]
+[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App3" to="Shelf/PanelContainer/HBoxContainer/App3" method="OnPressed"]
+[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App4" to="Shelf/PanelContainer/HBoxContainer/App4" method="OnPressed"]

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qmyVI35Cxq+ENSXr53u+7DRov6R1kUhW1HBGhW+z/lBXcmVwbqTMJ44NB8N4/YYDIRZglKNcIJf9pMpi6qxotw==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\MultiWindowVN\\MultiWindowVN.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RSheep\\.nuget\\packages\\godot.sourcegenerators\\4.2.0\\godot.sourcegenerators.4.2.0.nupkg.sha512",
+    "C:\\Users\\RSheep\\.nuget\\packages\\godotsharp\\4.2.0\\godotsharp.4.2.0.nupkg.sha512",
+    "C:\\Users\\RSheep\\.nuget\\packages\\godotsharpeditor\\4.2.0\\godotsharpeditor.4.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

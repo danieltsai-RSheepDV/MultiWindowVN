@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo6dppwgdgwkr"]
+
+[ext_resource type="Script" path="res://VN/GameManager.cs" id="1_0opwj"]
+[ext_resource type="PackedScene" uid="uid://dpqja5n6te8f3" path="res://VN/Textbox/textbox.tscn" id="1_6ixtp"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="1_vdr68"]
+[ext_resource type="Resource" uid="uid://0ygt67qwaea5" path="res://VN/Yarn/Dialogue.tres" id="2_fsm7a"]
+[ext_resource type="PackedScene" uid="uid://dp2hafa5ktis0" path="res://VN/OptionView/option_list_view.tscn" id="5_jlfi6"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="6_8uujo"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_d0wj5"]
+[ext_resource type="PackedScene" uid="uid://bydtdwaqwarv6" path="res://Phone/phone.tscn" id="8_hmu8w"]
+
+[node name="VNScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0opwj")
+
+[node name="YarnSpinnerCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueRunner" type="Control" parent="YarnSpinnerCanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdr68")
+yarnProject = ExtResource("2_fsm7a")
+variableStoragePath = NodePath("../InMemoryVariableStorage")
+dialogueViewPaths = [NodePath("../Textbox"), NodePath("../Option List View")]
+startNode = "Start"
+lineProviderPath = NodePath("../TextLineProvider")
+
+[node name="VariableDebugText" type="RichTextLabel" parent="YarnSpinnerCanvasLayer"]
+
+[node name="Textbox" parent="YarnSpinnerCanvasLayer" instance=ExtResource("1_6ixtp")]
+offset_top = -237.0
+
+[node name="Option List View" parent="YarnSpinnerCanvasLayer" instance=ExtResource("5_jlfi6")]
+
+[node name="InMemoryVariableStorage" type="Node" parent="YarnSpinnerCanvasLayer"]
+script = ExtResource("6_8uujo")
+debugTextViewPath = NodePath("../VariableDebugText")
+
+[node name="TextLineProvider" type="Node2D" parent="YarnSpinnerCanvasLayer"]
+position = Vector2(1, 0)
+script = ExtResource("7_d0wj5")
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(648, 1332)
+always_on_top = true
+
+[node name="Phone" parent="Window" instance=ExtResource("8_hmu8w")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0

@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpqja5n6te8f3"]
+
+[ext_resource type="Texture2D" uid="uid://dppunfwb5ac0g" path="res://VN/backing.png" id="1_ofx20"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs" id="1_vgqmx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8qic"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("1_ofx20")
+
+[node name="Textbox" type="MarginContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -185.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_vgqmx")
+viewControlPath = NodePath("ViewControl")
+useFadeEffect = false
+lineTextPath = NodePath("ViewControl/Content/RichTextLabel")
+characterNameTextPath = NodePath("ViewControl/Name/Label")
+useTypewriterEffect = true
+typewriterEffectSpeed = 240.0
+continueButtonPath = NodePath("ViewControl/Button")
+
+[node name="ViewControl" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="PanelContainer" parent="ViewControl"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_d8qic")
+
+[node name="Label" type="RichTextLabel" parent="ViewControl/Name"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Name"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Content" type="PanelContainer" parent="ViewControl"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ViewControl/Content"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b] Hello [/b]I am"
+
+[node name="Button" type="Button" parent="ViewControl"]
+layout_mode = 2
+text = "Continue"
