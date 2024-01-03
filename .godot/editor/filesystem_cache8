@@ -1,101 +1,103 @@
 fa3e26c661ea9a843a46ffcb69a5f64c
-::res://::1704190952
-icon.svg::CompressedTexture2D::4714094632717737473::1702244285::1702244285::1::::<><>::
-::res://addons/::1702244289
-::res://addons/YarnSpinner-Godot/::1702244290
-plugin.cfg::TextFile::-1::1702244289::0::1::::<><>::
-YarnSpinnerPlugin.cs::CSharpScript::-1::1702244289::0::1::::<>EditorPlugin<>::
-::res://addons/YarnSpinner-Godot/Editor/::1702244290
-YarnCompileErrorsPropertyEditor.cs::CSharpScript::-1::1702244290::0::1::::<>EditorProperty<>::
-YarnEditorUtility.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnImporter.cs::CSharpScript::-1::1702244290::0::1::::<>EditorImportPlugin<>::
-YarnProjectEditorUtility.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnProjectInspectorPlugin.cs::CSharpScript::-1::1702244290::0::1::::<>EditorInspectorPlugin<>::
-YarnScriptTemplate.txt::TextFile::-1::1702244290::0::1::::<><>::
-YarnSourceScriptsPropertyEditor.cs::CSharpScript::-1::1702244290::0::1::::<>EditorProperty<>::
-::res://addons/YarnSpinner-Godot/Editor/Icons/::1702244290
-mini_YarnSpinnerLogo.png::CompressedTexture2D::8518882522811647689::1702244290::1702244290::1::::<><>::
-YarnSpinnerFailed.png::CompressedTexture2D::6960776966761165694::1702244290::1702244290::1::::<><>::
-YarnSpinnerLogo.png::CompressedTexture2D::1055961193570156011::1702244290::1702244290::1::::<><>::
-YarnSpinnerNotTested.png::CompressedTexture2D::2490267489335323960::1702244290::1702244290::1::::<><>::
-YarnSpinnerSuccess.png::CompressedTexture2D::709222155423409309::1702244290::1702244290::1::::<><>::
-::res://addons/YarnSpinner-Godot/Editor/Icons/Asset Icons/::1702244290
-LineMetadata Icon.png::CompressedTexture2D::2204821086402759804::1702244290::1702244290::1::::<><>::
-Localization Icon.png::CompressedTexture2D::6978434153311360756::1702244290::1702244290::1::::<><>::
-LocalizationDatabase Icon.png::CompressedTexture2D::3200495203693394086::1702244290::1702244290::1::::<><>::
-mini_Localization Icon.png::CompressedTexture2D::4711620549389196051::1702244290::1702244290::1::::<><>::
-mini_YarnProject Icon.png::CompressedTexture2D::3499364637273823818::1702244290::1702244290::1::::<><>::
-mini_YarnScript Icon.png::CompressedTexture2D::1512248938181271301::1702244290::1702244290::1::::<><>::
-YarnProject Icon.png::CompressedTexture2D::3743592685063066628::1702244290::1702244290::1::::<><>::
-YarnScript Icon.png::CompressedTexture2D::7060959208298884469::1702244290::1702244290::1::::<><>::
-::res://addons/YarnSpinner-Godot/Editor/UI/::1702244290
-ContextLabel.tscn::PackedScene::-1::1702244290::0::1::::<><>::
-ErrorTextLabel.tscn::PackedScene::-1::1702244290::0::1::::<><>::
-FilenameLabel.tscn::PackedScene::-1::1702244290::0::1::::<><>::
-::res://addons/YarnSpinner-Godot/Runtime/::1702244290
-AssemblyExtensions.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-DialogueOption.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-DialogueRunner.cs::CSharpScript::-1::1702244289::0::1::::<>Node<>::
-FunctionInfo.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-InMemoryVariableStorage.cs::CSharpScript::-1::1702244289::0::1::::<>Node<>::
-LanguageAttribute.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-LineMetadata.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-LineMetadataTableEntry.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-Localization.cs::CSharpScript::-1::1702244289::0::1::::<>Resource<>::
-MarkupAttribute.cs::CSharpScript::-1::1702244289::0::1::::<>Object<>::
-Option.cs::CSharpScript::-1::1702244289::0::1::::<>Object<>::
-SerializedDeclaration.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-StringInfo.cs::CSharpScript::-1::1702244289::0::1::::<>Resource<>::
-StringTableEntry.cs::CSharpScript::-1::1702244289::0::1::::<><>::
-VariableStorageBehaviour.cs::CSharpScript::-1::1702244289::0::1::::<>Node<>::
-YarnProject.cs::CSharpScript::-1::1702244289::0::1::::<>Resource<>::
-YarnProjectError.cs::CSharpScript::-1::1702244289::0::1::::<>Resource<>::
-::res://addons/YarnSpinner-Godot/Runtime/Commands/::1702244290
-ActionManager.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-DefaultActions.cs::CSharpScript::-1::1702244290::0::1::::<>Node<>::
-DispatchCommand.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnActionAttribute.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnCommandAttribute.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnFunctionAttribute.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnParameterAttribute.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-YarnStateInjectorAttribute.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-::res://addons/YarnSpinner-Godot/Runtime/DLLs/::1702244290
-::res://addons/YarnSpinner-Godot/Runtime/LineProviders/::1702244290
-LineProviderBehaviour.cs::CSharpScript::-1::1702244290::0::1::::<>Node<>::
-LocalizedLine.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-TextLineProvider.cs::CSharpScript::-1::1702244290::0::1::::<>Node<>::
-::res://addons/YarnSpinner-Godot/Runtime/Views/::1702244290
-DialogueViewBase.cs::CSharpScript::-1::1702244290::0::1::::<><>::
-LineView.cs::CSharpScript::-1::1702244290::0::1::::<>Node<>::
-OptionsListView.cs::CSharpScript::-1::1702244290::0::1::::<>Node<>::
-OptionView.cs::CSharpScript::-1::1702244290::0::1::::<>Button<>::
-::res://addons/YarnSpinner-Godot/Scenes/::1702251416
-DefaultDialogueSystem.tscn::PackedScene::3921904942184075989::1702244289::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs<>res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>uid://b56ngcrq31nc5::::res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn
-DialogueRunner.tscn::PackedScene::-1::1702244289::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn
-OptionView.tscn::PackedScene::4556881870953115622::1702251416::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs
-::res://Phone/::1704190927
-phone.cs::CSharpScript::-1::1704190725::0::1::::<>Control<>::
-phone.tscn::PackedScene::4078306200782424845::1704190927::0::1::::<><>::uid://bdkyf05xesl6k::::res://Phone/Screens/Home Screen/home_screen.tscn<>res://Phone/phone.cs<>uid://bxx0oqg33cbc7::::res://Phone/Screens/Home Screen/nav-arrow-left.svg<>uid://h0wweraw136g::::res://Phone/Screens/Home Screen/home.svg<>uid://c7wldb38najsx::::res://Phone/Screens/Home Screen/menu.svg
-::res://Phone/Screens/::1703819579
-::res://Phone/Screens/Home Screen/::1704095130
-AppOpenTransition.cs::CSharpScript::-1::1703405838::0::1::::<>Control<>::
-app_open_transition.tscn::PackedScene::4198594062008671367::1703819590::0::1::::<><>::res://Phone/Screens/Home Screen/AppOpenTransition.cs
-home.svg::CompressedTexture2D::544306647010021380::1703442593::1703819600::1::::<><>::
-home_screen.tscn::PackedScene::2619098489422683012::1704095130::0::1::::<><>::uid://u8clso2bojiq::::res://Phone/Screens/Home Screen/Apps/app.tscn<>res://Phone/Screens/Home Screen/Apps/OpenApp.cs
-menu.svg::CompressedTexture2D::7064974015989325455::1703442605::1703819600::1::::<><>::
-nav-arrow-left.svg::CompressedTexture2D::4049788552597168824::1703442618::1703819600::1::::<><>::
-::res://Phone/Screens/Home Screen/Apps/::1703443433
-app.tscn::PackedScene::1472043384639325220::1703443433::0::1::::<><>::
-OpenApp.cs::CSharpScript::-1::1703439772::0::1::::<>LinkButton<>::
-::res://VN/::1704190800
-backing.png::CompressedTexture2D::8244298223824755040::1702244285::1703135985::1::::<><>::
-GameManager.cs::CSharpScript::-1::1702248788::0::1::::<>Control<>::
-vn_scene.tscn::PackedScene::3433269965001112797::1704190800::0::1::::<><>::res://VN/GameManager.cs<>uid://dpqja5n6te8f3::::res://VN/Textbox/textbox.tscn<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>uid://0ygt67qwaea5::::res://VN/Yarn/Dialogue.tres<>uid://dp2hafa5ktis0::::res://VN/OptionView/option_list_view.tscn<>res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs<>uid://bydtdwaqwarv6::::res://Phone/phone.tscn
-::res://VN/OptionView/::1702264461
-option_list_view.tscn::PackedScene::8268258187952701589::1702264461::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>uid://doqmab63nqdns::::res://VN/OptionView/option_view.tscn
-option_view.tscn::PackedScene::8175664611692394600::1702256505::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs
-::res://VN/Textbox/::1703135985
-textbox.tscn::PackedScene::8245672799866689338::1703135985::0::1::::<><>::uid://dppunfwb5ac0g::::res://VN/backing.png<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs
-::res://VN/Yarn/::1704190902
-Dialogue.tres::Resource::1804666067503002638::1704190902::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/YarnProject.cs<>res://addons/YarnSpinner-Godot/Runtime/Localization.cs
-dialogue.yarn::Resource::3676462232331977618::1702244285::1702244285::1::::<><>::
+::res://::1704249060
+icon.svg::CompressedTexture2D::4714094632717737473::1704249029::1704249029::1::::<><>::
+::res://addons/::1704249029
+::res://addons/YarnSpinner-Godot/::1704249029
+plugin.cfg::TextFile::-1::1704249029::0::1::::<><>::
+YarnSpinnerPlugin.cs::CSharpScript::-1::1704249029::0::1::::<>EditorPlugin<>::
+::res://addons/YarnSpinner-Godot/Editor/::1704249029
+YarnCompileErrorsPropertyEditor.cs::CSharpScript::-1::1704249029::0::1::::<>EditorProperty<>::
+YarnEditorUtility.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnImporter.cs::CSharpScript::-1::1704249029::0::1::::<>EditorImportPlugin<>::
+YarnProjectEditorUtility.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnProjectInspectorPlugin.cs::CSharpScript::-1::1704249029::0::1::::<>EditorInspectorPlugin<>::
+YarnScriptTemplate.txt::TextFile::-1::1704249029::0::1::::<><>::
+YarnSourceScriptsPropertyEditor.cs::CSharpScript::-1::1704249029::0::1::::<>EditorProperty<>::
+::res://addons/YarnSpinner-Godot/Editor/Icons/::1704249029
+mini_YarnSpinnerLogo.png::CompressedTexture2D::8518882522811647689::1704249029::1704249029::1::::<><>::
+YarnSpinnerFailed.png::CompressedTexture2D::6960776966761165694::1704249029::1704249029::1::::<><>::
+YarnSpinnerLogo.png::CompressedTexture2D::1055961193570156011::1704249029::1704249029::1::::<><>::
+YarnSpinnerNotTested.png::CompressedTexture2D::2490267489335323960::1704249029::1704249029::1::::<><>::
+YarnSpinnerSuccess.png::CompressedTexture2D::709222155423409309::1704249029::1704249029::1::::<><>::
+::res://addons/YarnSpinner-Godot/Editor/Icons/Asset Icons/::1704249029
+LineMetadata Icon.png::CompressedTexture2D::2204821086402759804::1704249029::1704249029::1::::<><>::
+Localization Icon.png::CompressedTexture2D::6978434153311360756::1704249029::1704249029::1::::<><>::
+LocalizationDatabase Icon.png::CompressedTexture2D::3200495203693394086::1704249029::1704249029::1::::<><>::
+mini_Localization Icon.png::CompressedTexture2D::4711620549389196051::1704249029::1704249029::1::::<><>::
+mini_YarnProject Icon.png::CompressedTexture2D::3499364637273823818::1704249029::1704249029::1::::<><>::
+mini_YarnScript Icon.png::CompressedTexture2D::1512248938181271301::1704249029::1704249029::1::::<><>::
+YarnProject Icon.png::CompressedTexture2D::3743592685063066628::1704249029::1704249029::1::::<><>::
+YarnScript Icon.png::CompressedTexture2D::7060959208298884469::1704249029::1704249029::1::::<><>::
+::res://addons/YarnSpinner-Godot/Editor/UI/::1704249029
+ContextLabel.tscn::PackedScene::-1::1704249029::0::1::::<><>::
+ErrorTextLabel.tscn::PackedScene::-1::1704249029::0::1::::<><>::
+FilenameLabel.tscn::PackedScene::-1::1704249029::0::1::::<><>::
+::res://addons/YarnSpinner-Godot/Runtime/::1704249029
+AssemblyExtensions.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+DialogueOption.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+DialogueRunner.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+FunctionInfo.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+InMemoryVariableStorage.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+LanguageAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+LineMetadata.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+LineMetadataTableEntry.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+Localization.cs::CSharpScript::-1::1704249029::0::1::::<>Resource<>::
+MarkupAttribute.cs::CSharpScript::-1::1704249029::0::1::::<>Object<>::
+Option.cs::CSharpScript::-1::1704249029::0::1::::<>Object<>::
+SerializedDeclaration.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+StringInfo.cs::CSharpScript::-1::1704249029::0::1::::<>Resource<>::
+StringTableEntry.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+VariableStorageBehaviour.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+YarnProject.cs::CSharpScript::-1::1704249029::0::1::::<>Resource<>::
+YarnProjectError.cs::CSharpScript::-1::1704249029::0::1::::<>Resource<>::
+::res://addons/YarnSpinner-Godot/Runtime/Commands/::1704249029
+ActionManager.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+DefaultActions.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+DispatchCommand.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnActionAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnCommandAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnFunctionAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnParameterAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+YarnStateInjectorAttribute.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+::res://addons/YarnSpinner-Godot/Runtime/DLLs/::1704249029
+::res://addons/YarnSpinner-Godot/Runtime/LineProviders/::1704249029
+LineProviderBehaviour.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+LocalizedLine.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+TextLineProvider.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+::res://addons/YarnSpinner-Godot/Runtime/Views/::1704249029
+DialogueViewBase.cs::CSharpScript::-1::1704249029::0::1::::<><>::
+LineView.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+OptionsListView.cs::CSharpScript::-1::1704249029::0::1::::<>Node<>::
+OptionView.cs::CSharpScript::-1::1704249029::0::1::::<>Button<>::
+::res://addons/YarnSpinner-Godot/Scenes/::1704249029
+DefaultDialogueSystem.tscn::PackedScene::3921904942184075989::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs<>res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>uid://b56ngcrq31nc5::::res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn
+DialogueRunner.tscn::PackedScene::-1::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs<>res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>res://addons/YarnSpinner-Godot/Scenes/OptionView.tscn
+OptionView.tscn::PackedScene::4556881870953115622::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs
+::res://Phone/::1704249029
+phone.cs::CSharpScript::-1::1704249029::0::1::::<>Control<>::
+phone.tscn::PackedScene::4078306200782424845::1704249029::0::1::::<><>::uid://y6wx86yi3w26::::res://Phone/Screens/Home Screen/home_screen.tscn<>res://Phone/phone.cs<>uid://bxx0oqg33cbc7::::res://Phone/Screens/Home Screen/nav-arrow-left.svg<>uid://rv1wt581lkxp::::res://Phone/Screens/Messenger/messenger.tscn<>uid://h0wweraw136g::::res://Phone/Screens/Home Screen/home.svg<>uid://c7wldb38najsx::::res://Phone/Screens/Home Screen/menu.svg
+::res://Phone/Screens/::1704249029
+::res://Phone/Screens/Home Screen/::1704249029
+AppOpenTransition.cs::CSharpScript::-1::1704249029::0::1::::<>Control<>::
+app_open_transition.tscn::PackedScene::4198594062008671367::1704249029::0::1::::<><>::res://Phone/Screens/Home Screen/AppOpenTransition.cs
+home.svg::CompressedTexture2D::544306647010021380::1704249029::1704249029::1::::<><>::
+home_screen.tscn::PackedScene::1749906587051064493::1704249029::0::1::::<><>::uid://u8clso2bojiq::::res://Phone/Screens/Home Screen/Apps/app.tscn<>res://Phone/Screens/Home Screen/Apps/OpenApp.cs
+menu.svg::CompressedTexture2D::7064974015989325455::1704249029::1704249029::1::::<><>::
+nav-arrow-left.svg::CompressedTexture2D::4049788552597168824::1704249029::1704249029::1::::<><>::
+::res://Phone/Screens/Home Screen/Apps/::1704249029
+app.tscn::PackedScene::1472043384639325220::1704249029::0::1::::<><>::
+OpenApp.cs::CSharpScript::-1::1704249029::0::1::::<>LinkButton<>::
+::res://Phone/Screens/Messenger/::1704249029
+messenger.tscn::PackedScene::1238181249781985245::1704249029::0::1::::<><>::
+::res://VN/::1704249029
+backing.png::CompressedTexture2D::8244298223824755040::1704249029::1704249029::1::::<><>::
+GameManager.cs::CSharpScript::-1::1704249029::0::1::::<>Control<>::
+vn_scene.tscn::PackedScene::3433269965001112797::1704249029::0::1::::<><>::res://VN/GameManager.cs<>uid://dpqja5n6te8f3::::res://VN/Textbox/textbox.tscn<>res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs<>uid://0ygt67qwaea5::::res://VN/Yarn/Dialogue.tres<>uid://dp2hafa5ktis0::::res://VN/OptionView/option_list_view.tscn<>res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs<>res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs<>uid://bydtdwaqwarv6::::res://Phone/phone.tscn
+::res://VN/OptionView/::1704249029
+option_list_view.tscn::PackedScene::8268258187952701589::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionsListView.cs<>uid://doqmab63nqdns::::res://VN/OptionView/option_view.tscn
+option_view.tscn::PackedScene::8175664611692394600::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs
+::res://VN/Textbox/::1704249029
+textbox.tscn::PackedScene::8245672799866689338::1704249029::0::1::::<><>::uid://dppunfwb5ac0g::::res://VN/backing.png<>res://addons/YarnSpinner-Godot/Runtime/Views/LineView.cs
+::res://VN/Yarn/::1704249029
+Dialogue.tres::Resource::1804666067503002638::1704249029::0::1::::<><>::res://addons/YarnSpinner-Godot/Runtime/YarnProject.cs<>res://addons/YarnSpinner-Godot/Runtime/Localization.cs
+dialogue.yarn::Resource::3676462232331977618::1704249029::1704249029::1::::<><>::
