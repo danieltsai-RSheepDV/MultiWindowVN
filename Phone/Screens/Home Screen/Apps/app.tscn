@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://u8clso2bojiq"]
+[gd_scene load_steps=3 format=3 uid="uid://u8clso2bojiq"]
+
+[ext_resource type="Script" path="res://Phone/Screens/Home Screen/Apps/OpenApp.cs" id="1_dhyej"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddwj"]
 bg_color = Color(0, 0, 0, 0.427451)
@@ -14,6 +16,7 @@ anchor_right = 0.130208
 anchor_bottom = 0.231481
 offset_right = -150.0
 offset_bottom = -150.0
+script = ExtResource("1_dhyej")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -35,7 +38,9 @@ offset_top = 118.0
 offset_right = 140.0
 offset_bottom = 140.0
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 text = "Messenger"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[connection signal="pressed" from="." to="." method="OnPressed"]

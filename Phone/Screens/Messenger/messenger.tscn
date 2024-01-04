@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c2payplngewgw" path="res://Phone/Screens/Messenger/Responses/messengerOptionView.tscn" id="9_700aa"]
 [ext_resource type="Script" path="res://Phone/Screens/Messenger/Responses/OptionsListViewMessenger.cs" id="9_qysk6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pufif"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfial"]
+bg_color = Color(0, 0.678431, 0.745098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jphoh"]
 texture = ExtResource("8_p55ev")
@@ -71,6 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfial")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -106,13 +107,15 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 alignment = 2
 script = ExtResource("5_khdji")
 
-[node name="Textbox" type="PanelContainer" parent="VBoxContainer/Texts/Scroll" node_paths=PackedStringArray("textboxPanel", "iTextboxPanel", "referenceSelf")]
+[node name="Textbox" type="MarginContainer" parent="VBoxContainer/Texts/Scroll" node_paths=PackedStringArray("textboxPanel", "iTextboxPanel", "referenceSelf")]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_pufif")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
 script = ExtResource("6_5vh4u")
 MCName = "Sphere"
 textboxPanel = NodePath("Panel")

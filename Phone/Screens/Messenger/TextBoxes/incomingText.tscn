@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx8l8dyclvhk5"]
+[gd_scene load_steps=4 format=3 uid="uid://dx8l8dyclvhk5"]
 
 [ext_resource type="Script" path="res://Phone/Screens/Messenger/TextBoxes/TextBox.cs" id="1_xigcw"]
 [ext_resource type="Texture2D" uid="uid://bi2x5j3svke5" path="res://Phone/Screens/Messenger/TextBoxes/incomingMsgBubble.png" id="2_e2ma3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pufif"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5fwv"]
 texture = ExtResource("2_e2ma3")
@@ -13,11 +10,12 @@ texture_margin_top = 15.0
 texture_margin_right = 15.0
 texture_margin_bottom = 25.0
 
-[node name="Text" type="PanelContainer" node_paths=PackedStringArray("label")]
+[node name="Text" type="MarginContainer" node_paths=PackedStringArray("label")]
 offset_right = 259.0
 offset_bottom = 65.0
 size_flags_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pufif")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
 script = ExtResource("1_xigcw")
 label = NodePath("MarginContainer/Label")
 

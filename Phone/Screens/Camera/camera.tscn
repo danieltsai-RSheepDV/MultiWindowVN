@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdxy4rlhu0lk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqn67"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Camera" type="Control"]
+layout_mode = 3
+anchor_right = 0.5625
+anchor_bottom = 2.05556
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -159.003
+offset_bottom = -0.00305176
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqn67")

@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://y6wx86yi3w26" path="res://Phone/Screens/Home Screen/home_screen.tscn" id="1_6788m"]
 [ext_resource type="Script" path="res://Phone/phone.cs" id="1_o55ee"]
-[ext_resource type="Texture2D" uid="uid://bxx0oqg33cbc7" path="res://Phone/Screens/Home Screen/nav-arrow-left.svg" id="3_4kobu"]
 [ext_resource type="PackedScene" uid="uid://rv1wt581lkxp" path="res://Phone/Screens/Messenger/messenger.tscn" id="3_g8kbk"]
 [ext_resource type="Texture2D" uid="uid://h0wweraw136g" path="res://Phone/Screens/Home Screen/home.svg" id="4_7i1ed"]
-[ext_resource type="Texture2D" uid="uid://c7wldb38najsx" path="res://Phone/Screens/Home Screen/menu.svg" id="5_5lij3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwd5f"]
-bg_color = Color(0.964706, 0.4, 0, 1)
+[ext_resource type="PackedScene" uid="uid://cfqyiqlvk4pr0" path="res://Phone/Screens/Files/files.tscn" id="4_csgcd"]
+[ext_resource type="PackedScene" uid="uid://cdxy4rlhu0lk4" path="res://Phone/Screens/Camera/camera.tscn" id="5_s2it7"]
+[ext_resource type="Script" path="res://Phone/HomeButton.cs" id="7_xuugr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t28bh"]
 bg_color = Color(0, 0, 0, 1)
@@ -24,15 +22,6 @@ script = ExtResource("1_o55ee")
 contentRoot = NodePath("Content")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gwd5f")
-
 [node name="Content" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -43,34 +32,62 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Home Screen" parent="Content" instance=ExtResource("1_6788m")]
-visible = false
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FilesApp" parent="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer" index="0" node_paths=PackedStringArray("screen")]
+screen = NodePath("../../../../../../Files")
+
+[node name="ContactsApp" parent="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer" index="1" node_paths=PackedStringArray("screen")]
+screen = NodePath("../../../../../../Contacts")
+
+[node name="PhoneApp" parent="Content/Home Screen/VBox/Shelf/PanelContainer/HBoxContainer" index="0"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+
+[node name="MessageApp" parent="Content/Home Screen/VBox/Shelf/PanelContainer/HBoxContainer" index="1" node_paths=PackedStringArray("screen")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+screen = NodePath("../../../../../../Messenger")
+
+[node name="BrowserApp" parent="Content/Home Screen/VBox/Shelf/PanelContainer/HBoxContainer" index="2"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+
+[node name="CameraApp" parent="Content/Home Screen/VBox/Shelf/PanelContainer/HBoxContainer" index="3" node_paths=PackedStringArray("screen")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+screen = NodePath("../../../../../../Camera")
 
 [node name="Messenger" parent="Content" instance=ExtResource("3_g8kbk")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Files" type="VBoxContainer" parent="Content"]
-process_mode = 4
+[node name="Files" parent="Content" instance=ExtResource("4_csgcd")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
+offset_bottom = 0.0
 
-[node name="Camera" type="VBoxContainer" parent="Content"]
-process_mode = 4
+[node name="Camera" parent="Content" instance=ExtResource("5_s2it7")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
 
 [node name="Contacts" type="VBoxContainer" parent="Content"]
 process_mode = 4
@@ -132,28 +149,23 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 130
 
-[node name="Back" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_4kobu")
-texture_pressed = ExtResource("3_4kobu")
-texture_hover = ExtResource("3_4kobu")
-texture_disabled = ExtResource("3_4kobu")
-texture_focused = ExtResource("3_4kobu")
-
-[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
+[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer" node_paths=PackedStringArray("screensRoot", "homeScreen")]
 layout_mode = 2
 texture_normal = ExtResource("4_7i1ed")
 texture_pressed = ExtResource("4_7i1ed")
 texture_hover = ExtResource("4_7i1ed")
 texture_disabled = ExtResource("4_7i1ed")
 texture_focused = ExtResource("4_7i1ed")
+script = ExtResource("7_xuugr")
+screensRoot = NodePath("../../../../../Content")
+homeScreen = NodePath("../../../../../Content/Home Screen")
 
-[node name="Multi" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("5_5lij3")
-texture_pressed = ExtResource("5_5lij3")
-texture_hover = ExtResource("5_5lij3")
-texture_disabled = ExtResource("5_5lij3")
-texture_focused = ExtResource("5_5lij3")
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" to="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" method="OnPressed"]
 
-[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[editable path="Content/Home Screen"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/FilesApp"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/ContactsApp"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/MapsApp"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/MailApp"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/ClockApp"]
+[editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/SettingsApp"]

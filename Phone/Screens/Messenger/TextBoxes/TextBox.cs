@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class TextBox : PanelContainer
+public partial class TextBox : Control
 {
 	[Export] private RichTextLabel label;
 	

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfqyiqlvk4pr0"]
+
+[ext_resource type="PackedScene" uid="uid://cbnvr2sig1ewl" path="res://Phone/Screens/Files/FileElement/Folder/fileFolder.tscn" id="1_18asg"]
+[ext_resource type="PackedScene" uid="uid://d3f3cvqsbck5u" path="res://Phone/Screens/Files/FileElement/fileTextDoc.tscn" id="2_86rn6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg2tk"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhslh"]
+bg_color = Color(0, 0.584314, 0.352941, 1)
+
+[node name="Files" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 0.5625
+anchor_bottom = 2.05556
+offset_bottom = -0.00292969
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xg2tk")
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="VSplitContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhslh")
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Header"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="VSplitContainer/Header/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Files"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 30
+
+[node name="Root" type="GridContainer" parent="VSplitContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="App" parent="VSplitContainer/MarginContainer/Root" node_paths=PackedStringArray("pagesRoot", "targetPage") instance=ExtResource("1_18asg")]
+layout_mode = 2
+pagesRoot = NodePath("../..")
+targetPage = NodePath("../../Root2")
+
+[node name="App2" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("1_18asg")]
+layout_mode = 2
+
+[node name="App3" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("1_18asg")]
+layout_mode = 2
+
+[node name="App4" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App5" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App6" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App7" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="Root2" type="GridContainer" parent="VSplitContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="App4" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App5" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App6" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+layout_mode = 2
+
+[node name="App7" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+layout_mode = 2

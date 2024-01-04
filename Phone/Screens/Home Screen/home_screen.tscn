@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://y6wx86yi3w26"]
+[gd_scene load_steps=6 format=3 uid="uid://y6wx86yi3w26"]
 
 [ext_resource type="PackedScene" uid="uid://u8clso2bojiq" path="res://Phone/Screens/Home Screen/Apps/app.tscn" id="1_e3b6a"]
 [ext_resource type="Script" path="res://Phone/Screens/Home Screen/Apps/OpenApp.cs" id="2_w8emj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hopyg"]
+bg_color = Color(0.913725, 0.454902, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npgh8"]
 bg_color = Color(0, 0, 0, 0.439216)
@@ -17,16 +20,17 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Home Screen" type="VBoxContainer"]
-anchors_preset = -1
-anchor_right = 0.5625
-anchor_bottom = 2.05556
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Home Screen" type="PanelContainer"]
+offset_right = 648.0
+offset_bottom = 1332.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hopyg")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
 theme_override_constants/separation = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Content" type="MarginContainer" parent="."]
+[node name="Content" type="MarginContainer" parent="VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -34,29 +38,29 @@ theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VSplitContainer" type="VBoxContainer" parent="Content"]
+[node name="VSplitContainer" type="VBoxContainer" parent="VBox/Content"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Content/VSplitContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBox/Content/VSplitContainer"]
 custom_minimum_size = Vector2(0, 375)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Content/VSplitContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/Content/VSplitContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = -25
 
-[node name="Date" type="Label" parent="Content/VSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Date" type="Label" parent="VBox/Content/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "SUN, December 24"
 horizontal_alignment = 1
 
-[node name="Time" type="Label" parent="Content/VSplitContainer/CenterContainer/VBoxContainer"]
+[node name="Time" type="Label" parent="VBox/Content/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 120
 text = "6:03"
 
-[node name="GridContainer" type="GridContainer" parent="Content/VSplitContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBox/Content/VSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -64,57 +68,69 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="App" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="FilesApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
 
-[node name="App2" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/FilesApp" index="1"]
+text = "Files"
+
+[node name="ContactsApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
 
-[node name="App3" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/ContactsApp" index="1"]
+text = "Contacts"
+
+[node name="MapsApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
+disabled = true
 
-[node name="App4" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/MapsApp" index="1"]
+text = "Disabled"
+
+[node name="MailApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
+disabled = true
 
-[node name="App5" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/MailApp" index="1"]
+text = "Disabled"
+
+[node name="ClockApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
+disabled = true
 
-[node name="App6" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/ClockApp" index="1"]
+text = "Disabled"
+
+[node name="SettingsApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-script = ExtResource("2_w8emj")
+disabled = true
 
-[node name="App7" parent="Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
-layout_mode = 2
-script = ExtResource("2_w8emj")
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/SettingsApp" index="1"]
+text = "Disabled"
 
-[node name="Shelf" type="MarginContainer" parent="."]
+[node name="Shelf" type="MarginContainer" parent="VBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="Shelf"]
+[node name="PanelContainer" type="PanelContainer" parent="VBox/Shelf"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_npgh8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Shelf/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/Shelf/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="App" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+[node name="PhoneApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
 custom_minimum_size = Vector2(125, 150)
 layout_mode = 2
 script = ExtResource("2_w8emj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App"]
+[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp"]
 custom_minimum_size = Vector2(95, 95)
 layout_mode = 1
 anchors_preset = 8
@@ -133,13 +149,13 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
 
-[node name="App2" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+[node name="MessageApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
 custom_minimum_size = Vector2(125, 150)
 layout_mode = 2
 script = ExtResource("2_w8emj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App2"]
+[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp"]
 custom_minimum_size = Vector2(95, 95)
 layout_mode = 1
 anchors_preset = 8
@@ -158,13 +174,13 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
 
-[node name="App3" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+[node name="BrowserApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
 custom_minimum_size = Vector2(125, 150)
 layout_mode = 2
 script = ExtResource("2_w8emj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App3"]
+[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp"]
 custom_minimum_size = Vector2(95, 95)
 layout_mode = 1
 anchors_preset = 8
@@ -183,13 +199,13 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
 
-[node name="App4" type="LinkButton" parent="Shelf/PanelContainer/HBoxContainer" groups=["App"]]
+[node name="CameraApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
 custom_minimum_size = Vector2(125, 150)
 layout_mode = 2
 script = ExtResource("2_w8emj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Shelf/PanelContainer/HBoxContainer/App4"]
+[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/CameraApp"]
 custom_minimum_size = Vector2(95, 95)
 layout_mode = 1
 anchors_preset = 8
@@ -208,14 +224,14 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
 
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App" to="Content/VSplitContainer/GridContainer/App" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App2" to="Content/VSplitContainer/GridContainer/App2" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App3" to="Content/VSplitContainer/GridContainer/App3" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App4" to="Content/VSplitContainer/GridContainer/App4" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App5" to="Content/VSplitContainer/GridContainer/App5" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App6" to="Content/VSplitContainer/GridContainer/App6" method="OnPressed"]
-[connection signal="pressed" from="Content/VSplitContainer/GridContainer/App7" to="Content/VSplitContainer/GridContainer/App7" method="OnPressed"]
-[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App" to="Shelf/PanelContainer/HBoxContainer/App" method="OnPressed"]
-[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App2" to="Shelf/PanelContainer/HBoxContainer/App2" method="OnPressed"]
-[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App3" to="Shelf/PanelContainer/HBoxContainer/App3" method="OnPressed"]
-[connection signal="pressed" from="Shelf/PanelContainer/HBoxContainer/App4" to="Shelf/PanelContainer/HBoxContainer/App4" method="OnPressed"]
+[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp" to="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp" method="OnPressed"]
+[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp" to="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp" method="OnPressed"]
+[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp" to="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp" method="OnPressed"]
+[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/CameraApp" to="VBox/Shelf/PanelContainer/HBoxContainer/CameraApp" method="OnPressed"]
+
+[editable path="VBox/Content/VSplitContainer/GridContainer/FilesApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/ContactsApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/MapsApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/MailApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/ClockApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/SettingsApp"]
