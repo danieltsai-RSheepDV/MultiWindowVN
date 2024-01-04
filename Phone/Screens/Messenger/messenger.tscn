@@ -1,4 +1,35 @@
-[gd_scene format=3 uid="uid://rv1wt581lkxp"]
+[gd_scene load_steps=15 format=3 uid="uid://rv1wt581lkxp"]
+
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="3_4fdu4"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="3_u5431"]
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="4_3gy7q"]
+[ext_resource type="Resource" uid="uid://0ygt67qwaea5" path="res://VN/Yarn/Dialogue.tres" id="4_f6x4y"]
+[ext_resource type="Script" path="res://Phone/Screens/Messenger/Scroll.cs" id="5_khdji"]
+[ext_resource type="Script" path="res://Phone/Screens/Messenger/MessengerLineView.cs" id="6_5vh4u"]
+[ext_resource type="StyleBox" uid="uid://bqhex7x65k5s6" path="res://Phone/Screens/Messenger/TextBoxes/9SliceBox.tres" id="7_yay2m"]
+[ext_resource type="Texture2D" uid="uid://bi2x5j3svke5" path="res://Phone/Screens/Messenger/TextBoxes/incomingMsgBubble.png" id="8_p55ev"]
+[ext_resource type="PackedScene" uid="uid://c2payplngewgw" path="res://Phone/Screens/Messenger/Responses/messengerOptionView.tscn" id="9_700aa"]
+[ext_resource type="Script" path="res://Phone/Screens/Messenger/Responses/OptionsListViewMessenger.cs" id="9_qysk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pufif"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jphoh"]
+texture = ExtResource("8_p55ev")
+texture_margin_left = 25.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4wb"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwo54"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Messenger" type="Control"]
 layout_mode = 3
@@ -6,6 +37,32 @@ anchor_right = 0.5625
 anchor_bottom = 2.05556
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DialogueRunner" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_4fdu4")
+yarnProject = ExtResource("4_f6x4y")
+variableStoragePath = NodePath("../InMemoryVariableStorage")
+dialogueViewPaths = [NodePath("../VBoxContainer/Texts/Scroll/Textbox"), NodePath("../VBoxContainer/Option View")]
+startNode = "Start"
+lineProviderPath = NodePath("../TextLineProvider")
+
+[node name="InMemoryVariableStorage" type="Node" parent="."]
+script = ExtResource("3_u5431")
+debugTextViewPath = NodePath("../VariableDebugText")
+
+[node name="VariableDebugText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1.0
+
+[node name="TextLineProvider" type="Node2D" parent="."]
+position = Vector2(1, 0)
+script = ExtResource("4_3gy7q")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -22,20 +79,134 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="Header" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Header"]
 layout_mode = 2
 theme_override_constants/margin_left = 55
 theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 35
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/Header/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "blucario99"
 vertical_alignment = 1
+
+[node name="Texts" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Scroll" type="VBoxContainer" parent="VBoxContainer/Texts"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+script = ExtResource("5_khdji")
+
+[node name="Textbox" type="PanelContainer" parent="VBoxContainer/Texts/Scroll" node_paths=PackedStringArray("textboxPanel", "iTextboxPanel", "referenceSelf")]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_pufif")
+script = ExtResource("6_5vh4u")
+MCName = "Sphere"
+textboxPanel = NodePath("Panel")
+iTextboxPanel = NodePath("Panel2")
+referenceSelf = NodePath(".")
+viewControlPath = NodePath("Control")
+lineTextPath = NodePath("MarginContainer/Label")
+showCharacterNameInLineView = false
+useTypewriterEffect = true
+typewriterEffectSpeed = 30.0
+autoAdvance = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Texts/Scroll/Textbox"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_yay2m")
+
+[node name="Panel2" type="Panel" parent="VBoxContainer/Texts/Scroll/Textbox"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jphoh")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Texts/Scroll/Textbox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer/Texts/Scroll/Textbox/MarginContainer"]
+custom_minimum_size = Vector2(40, 35)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Hello world!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/Texts/Scroll/Textbox"]
+layout_mode = 2
+
+[node name="Text Input" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Text Input"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Text Input/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8c4wb")
+
+[node name="Label" type="Label" parent="VBoxContainer/Text Input/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "    Enter Message..."
+
+[node name="Option View" type="Control" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+script = ExtResource("9_qysk6")
+optionViewPrefab = ExtResource("9_700aa")
+viewControlPath = NodePath("MarginContainer")
+boxContainerPath = NodePath("MarginContainer/VBoxContainer")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Option View"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwo54")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Option View"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Option View/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[connection signal="LineCompleted" from="VBoxContainer/Texts/Scroll/Textbox" to="VBoxContainer/Texts/Scroll" method="GenerateTextbox"]

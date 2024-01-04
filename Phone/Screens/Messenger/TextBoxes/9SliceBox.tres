@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bqhex7x65k5s6"]
+
+[ext_resource type="Texture2D" uid="uid://cobo6ew4ajram" path="res://Phone/Screens/Messenger/TextBoxes/msgBubble.png" id="1_yofw4"]
+
+[resource]
+texture = ExtResource("1_yofw4")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0

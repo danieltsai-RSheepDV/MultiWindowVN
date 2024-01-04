@@ -38,13 +38,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -34.0005
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Home Screen" parent="Content" instance=ExtResource("1_6788m")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
 
 [node name="Messenger" parent="Content" instance=ExtResource("3_g8kbk")]
 layout_mode = 1

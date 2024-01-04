@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2payplngewgw"]
+
+[ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/Views/OptionView.cs" id="1_0ypi3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4wb"]
+bg_color = Color(0.184314, 0.184314, 0.184314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbfrp"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(0, 45)
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 418.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8c4wb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sbfrp")
+text = "Hello
+"
+script = ExtResource("1_0ypi3")

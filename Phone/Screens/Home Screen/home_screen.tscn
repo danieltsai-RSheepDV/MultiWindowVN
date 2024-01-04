@@ -18,11 +18,13 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Home Screen" type="VBoxContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.5625
+anchor_bottom = 2.05556
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Content" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -95,7 +97,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="Shelf"]
 layout_mode = 2
