@@ -15,7 +15,7 @@ YarnProjectPaths=["res://VN/Yarn/Dialogue.tres"]
 [application]
 
 config/name="MultiWindowVN"
-run/main_scene="res://VN/vn_scene.tscn"
+run/main_scene="res://Title Screen/TitleScene.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 run/max_fps=165
 config/icon="res://icon.svg"

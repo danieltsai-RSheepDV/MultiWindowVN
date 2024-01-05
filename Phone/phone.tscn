@@ -44,8 +44,8 @@ grow_vertical = 2
 [node name="FilesApp" parent="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer" index="0" node_paths=PackedStringArray("screen")]
 screen = NodePath("../../../../../../Files")
 
-[node name="ContactsApp" parent="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer" index="1" node_paths=PackedStringArray("screen")]
-screen = NodePath("../../../../../../Contacts")
+[node name="ContactsApp" parent="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer" index="1"]
+disabled = true
 
 [node name="PhoneApp" parent="Content/Home Screen/VBox/Shelf/PanelContainer/HBoxContainer" index="0"]
 size_flags_horizontal = 4
@@ -88,16 +88,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Contacts" type="VBoxContainer" parent="Content"]
-process_mode = 4
-visible = false
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
 
 [node name="Top Bar" type="MarginContainer" parent="."]
 layout_mode = 2

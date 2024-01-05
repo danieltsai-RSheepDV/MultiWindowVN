@@ -1,15 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfqyiqlvk4pr0"]
+[gd_scene load_steps=9 format=3 uid="uid://cfqyiqlvk4pr0"]
 
+[ext_resource type="Script" path="res://Phone/Screens/Files/FileSystemManager.cs" id="1_2kc5r"]
 [ext_resource type="PackedScene" uid="uid://cbnvr2sig1ewl" path="res://Phone/Screens/Files/FileElement/Folder/fileFolder.tscn" id="1_18asg"]
-[ext_resource type="PackedScene" uid="uid://d3f3cvqsbck5u" path="res://Phone/Screens/Files/FileElement/fileTextDoc.tscn" id="2_86rn6"]
+[ext_resource type="Texture2D" uid="uid://ihh5nhlpvryg" path="res://Phone/Screens/Files/backButton.png" id="1_opvfa"]
+[ext_resource type="PackedScene" uid="uid://d3f3cvqsbck5u" path="res://Phone/Screens/Files/FileElement/Text Document/fileTextDoc.tscn" id="4_6ndv4"]
+[ext_resource type="PackedScene" uid="uid://qjie73pqwvyp" path="res://Phone/Screens/Files/FileElement/Text Document/Text Files/HelloWorld.tscn" id="5_cvgyk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg2tk"]
 bg_color = Color(0.878431, 0.878431, 0.878431, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhslh"]
-bg_color = Color(0, 0.584314, 0.352941, 1)
+bg_color = Color(0, 0.623529, 0.317647, 1)
 
-[node name="Files" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76vxe"]
+bg_color = Color(0, 0.32549, 0.152941, 1)
+
+[node name="Files" type="PanelContainer" node_paths=PackedStringArray("root", "pagesRoot", "docViewer", "docViewerContent")]
 anchors_preset = -1
 anchor_right = 0.5625
 anchor_bottom = 2.05556
@@ -17,6 +23,11 @@ offset_bottom = -0.00292969
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xg2tk")
+script = ExtResource("1_2kc5r")
+root = NodePath("VSplitContainer/MarginContainer/Root")
+pagesRoot = NodePath("VSplitContainer/MarginContainer")
+docViewer = NodePath("Text Doc Viewer")
+docViewerContent = NodePath("Text Doc Viewer/PanelContainer")
 metadata/_edit_use_anchors_ = true
 
 [node name="VSplitContainer" type="VBoxContainer" parent="."]
@@ -29,7 +40,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bhslh")
 
 [node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Header"]
 layout_mode = 2
+theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
 [node name="Label" type="Label" parent="VSplitContainer/Header/MarginContainer"]
@@ -37,7 +50,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Files"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="VSplitContainer/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("1_opvfa")
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="VSplitContainer"]
 layout_mode = 2
@@ -52,10 +72,9 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="App" parent="VSplitContainer/MarginContainer/Root" node_paths=PackedStringArray("pagesRoot", "targetPage") instance=ExtResource("1_18asg")]
+[node name="Folder1" parent="VSplitContainer/MarginContainer/Root" node_paths=PackedStringArray("targetPage") instance=ExtResource("1_18asg")]
 layout_mode = 2
-pagesRoot = NodePath("../..")
-targetPage = NodePath("../../Root2")
+targetPage = NodePath("../../Folder1")
 
 [node name="App2" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("1_18asg")]
 layout_mode = 2
@@ -63,19 +82,20 @@ layout_mode = 2
 [node name="App3" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("1_18asg")]
 layout_mode = 2
 
-[node name="App4" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+[node name="App4" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("4_6ndv4")]
+layout_mode = 2
+fileScene = ExtResource("5_cvgyk")
+
+[node name="App5" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App5" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+[node name="App6" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App6" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
+[node name="App7" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App7" parent="VSplitContainer/MarginContainer/Root" instance=ExtResource("2_86rn6")]
-layout_mode = 2
-
-[node name="Root2" type="GridContainer" parent="VSplitContainer/MarginContainer"]
+[node name="Folder1" type="GridContainer" parent="VSplitContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,14 +104,55 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="App4" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+[node name="App4" parent="VSplitContainer/MarginContainer/Folder1" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App5" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+[node name="App5" parent="VSplitContainer/MarginContainer/Folder1" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App6" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+[node name="App6" parent="VSplitContainer/MarginContainer/Folder1" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
 
-[node name="App7" parent="VSplitContainer/MarginContainer/Root2" instance=ExtResource("2_86rn6")]
+[node name="App7" parent="VSplitContainer/MarginContainer/Folder1" instance=ExtResource("4_6ndv4")]
 layout_mode = 2
+
+[node name="Text Doc Viewer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="PanelContainer" parent="Text Doc Viewer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_76vxe")
+
+[node name="MarginContainer" type="MarginContainer" parent="Text Doc Viewer/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Text Doc Viewer/Header/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Files"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="Text Doc Viewer/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("1_opvfa")
+stretch_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="Text Doc Viewer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HelloWorld" parent="Text Doc Viewer/PanelContainer" instance=ExtResource("5_cvgyk")]
+layout_mode = 2
+
+[connection signal="pressed" from="VSplitContainer/Header/MarginContainer/TextureButton" to="." method="BackNav"]
+[connection signal="pressed" from="Text Doc Viewer/Header/MarginContainer/TextureButton" to="." method="BackNav"]
+[connection signal="pressed" from="Text Doc Viewer/Header/MarginContainer/TextureButton" to="." method="CloseViewer"]

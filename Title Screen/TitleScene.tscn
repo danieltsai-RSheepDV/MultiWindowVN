@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://e40f7hboar63"]
+
+[ext_resource type="Texture2D" uid="uid://bwa412cgktft7" path="res://VN/Backgrounds/TestImage.png" id="1_aekvy"]
+[ext_resource type="Texture2D" uid="uid://j7aprwnpe1xu" path="res://Title Screen/Start.png" id="2_qtni2"]
+[ext_resource type="Texture2D" uid="uid://beqhn55a6rwuu" path="res://Title Screen/Gear.png" id="3_v0s8c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iytn6"]
+texture = ExtResource("1_aekvy")
+
+[node name="TitleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_iytn6")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(0.843137, 0.733333, 0.588235, 1)
+layout_mode = 0
+offset_left = 768.0
+offset_top = 348.0
+offset_right = 1071.0
+offset_bottom = 441.0
+texture_normal = ExtResource("2_qtni2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+modulate = Color(0.843137, 0.733333, 0.588235, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_top = 16.0
+offset_right = -9.0
+offset_bottom = 85.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_v0s8c")
+ignore_texture_size = true
+stretch_mode = 5
