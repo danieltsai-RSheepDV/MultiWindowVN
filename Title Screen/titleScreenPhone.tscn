@@ -1,0 +1,177 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsrmdtbc87sj0"]
+
+[ext_resource type="Texture2D" uid="uid://h0wweraw136g" path="res://Phone/Screens/Home Screen/home.svg" id="1_8w3gk"]
+[ext_resource type="Script" path="res://Phone/phone.cs" id="1_ekt2y"]
+[ext_resource type="Texture2D" uid="uid://beqhn55a6rwuu" path="res://Title Screen/Gear.png" id="1_h4jse"]
+[ext_resource type="PackedScene" uid="uid://u1fribeu7vlx" path="res://Phone/Screens/Settings/settings_screen.tscn" id="1_wk55f"]
+[ext_resource type="Script" path="res://Phone/HomeButton.cs" id="2_qeuq6"]
+[ext_resource type="Texture2D" uid="uid://bp5y5m0ut8onk" path="res://Phone/Backgrounds/TempBackground.png" id="2_s4es1"]
+[ext_resource type="Script" path="res://Phone/OpenSettings.cs" id="6_kdcqr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s33ey"]
+texture = ExtResource("2_s4es1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t28bh"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Phone" type="Control" node_paths=PackedStringArray("contentRoot")]
+layout_mode = 3
+anchor_right = 0.5625
+anchor_bottom = 2.05556
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekt2y")
+contentRoot = NodePath("Content")
+metadata/_edit_use_anchors_ = true
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.974474
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Home Screen" type="Control" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Content/Home Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_s33ey")
+
+[node name="CenterContainer" type="CenterContainer" parent="Content/Home Screen"]
+custom_minimum_size = Vector2(0, 375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/Home Screen/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="Date" type="Label" parent="Content/Home Screen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SUN, December 24"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="Content/Home Screen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "6:03"
+
+[node name="Label" type="Label" parent="Content/Home Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.0
+offset_top = 300.0
+offset_right = 324.0
+offset_bottom = 437.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.101961, 0.113725, 0.25098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.905882, 0.882353, 0.639216, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 100
+text = "blindness"
+horizontal_alignment = 1
+
+[node name="Settings Screen" parent="Content" instance=ExtResource("1_wk55f")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Top Bar" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 648.0
+offset_bottom = 66.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "6:02"
+
+[node name="Battery" type="Label" parent="Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100%"
+horizontal_alignment = 2
+
+[node name="Bottom Buttons" type="Panel" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t28bh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Bottom Buttons" type="CenterContainer" parent="Bottom Buttons/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Buttons/MarginContainer/Bottom Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer" node_paths=PackedStringArray("homeScreen")]
+layout_mode = 2
+texture_normal = ExtResource("1_8w3gk")
+texture_pressed = ExtResource("1_8w3gk")
+texture_hover = ExtResource("1_8w3gk")
+texture_disabled = ExtResource("1_8w3gk")
+texture_focused = ExtResource("1_8w3gk")
+script = ExtResource("2_qeuq6")
+homeScreen = NodePath("../../../../../Content/Home Screen")
+
+[node name="SettingsButton" type="TextureButton" parent="Bottom Buttons/MarginContainer" node_paths=PackedStringArray("settingScreen")]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("1_h4jse")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_kdcqr")
+settingScreen = NodePath("../../../Content/Settings Screen")
+
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" to="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" method="Pressed"]
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/SettingsButton" to="Bottom Buttons/MarginContainer/SettingsButton" method="Pressed"]

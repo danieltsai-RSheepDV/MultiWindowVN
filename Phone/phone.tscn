@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bydtdwaqwarv6"]
+[gd_scene load_steps=12 format=3 uid="uid://bydtdwaqwarv6"]
 
 [ext_resource type="PackedScene" uid="uid://y6wx86yi3w26" path="res://Phone/Screens/Home Screen/home_screen.tscn" id="1_6788m"]
 [ext_resource type="Script" path="res://Phone/phone.cs" id="1_o55ee"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://h0wweraw136g" path="res://Phone/Screens/Home Screen/home.svg" id="4_7i1ed"]
 [ext_resource type="PackedScene" uid="uid://cfqyiqlvk4pr0" path="res://Phone/Screens/Files/files.tscn" id="4_csgcd"]
 [ext_resource type="PackedScene" uid="uid://cdxy4rlhu0lk4" path="res://Phone/Screens/Camera/camera.tscn" id="5_s2it7"]
+[ext_resource type="PackedScene" uid="uid://u1fribeu7vlx" path="res://Phone/Screens/Settings/settings_screen.tscn" id="6_cwchl"]
 [ext_resource type="Script" path="res://Phone/HomeButton.cs" id="7_xuugr"]
+[ext_resource type="Texture2D" uid="uid://beqhn55a6rwuu" path="res://Title Screen/Gear.png" id="8_tnrns"]
+[ext_resource type="Script" path="res://Phone/OpenSettings.cs" id="9_tko33"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t28bh"]
 bg_color = Color(0, 0, 0, 1)
@@ -89,6 +92,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Settings Screen" parent="Content" instance=ExtResource("6_cwchl")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
 [node name="Top Bar" type="MarginContainer" parent="."]
 layout_mode = 2
 offset_right = 648.0
@@ -139,7 +148,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 130
 
-[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer" node_paths=PackedStringArray("screensRoot", "homeScreen")]
+[node name="Home" type="TextureButton" parent="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer" node_paths=PackedStringArray("homeScreen")]
 layout_mode = 2
 texture_normal = ExtResource("4_7i1ed")
 texture_pressed = ExtResource("4_7i1ed")
@@ -147,10 +156,20 @@ texture_hover = ExtResource("4_7i1ed")
 texture_disabled = ExtResource("4_7i1ed")
 texture_focused = ExtResource("4_7i1ed")
 script = ExtResource("7_xuugr")
-screensRoot = NodePath("../../../../../Content")
 homeScreen = NodePath("../../../../../Content/Home Screen")
 
-[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" to="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" method="OnPressed"]
+[node name="SettingsButton" type="TextureButton" parent="Bottom Buttons/MarginContainer" node_paths=PackedStringArray("settingScreen")]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("8_tnrns")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("9_tko33")
+settingScreen = NodePath("../../../Content/Settings Screen")
+
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" to="Bottom Buttons/MarginContainer/Bottom Buttons/HBoxContainer/Home" method="Pressed"]
+[connection signal="pressed" from="Bottom Buttons/MarginContainer/SettingsButton" to="Bottom Buttons/MarginContainer/SettingsButton" method="Pressed"]
 
 [editable path="Content/Home Screen"]
 [editable path="Content/Home Screen/VBox/Content/VSplitContainer/GridContainer/FilesApp"]

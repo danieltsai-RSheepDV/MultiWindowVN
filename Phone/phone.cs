@@ -17,22 +17,14 @@ public partial class phone : Control
 		
 	}
 
-	public void LoadScreen(int i)
+	public void LoadScreen(Control c)
 	{
 		foreach (Control screen in contentRoot.GetChildren())
 		{
 			screen.SetProcess(false);
-			screen.Hide();
+			screen.Visible = false;
 		}
-
-		Control s = (Control) contentRoot.GetChild(i);
-		s.SetProcess(true);
-		s.Show();
-	}
-
-	public void _on_back_pressed()
-	{
-		LoadScreen(1);
-		GD.Print("test");
+		
+		c.Visible = true;
 	}
 }

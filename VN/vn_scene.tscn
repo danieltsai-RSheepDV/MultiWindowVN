@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo6dppwgdgwkr"]
+[gd_scene load_steps=13 format=3 uid="uid://bo6dppwgdgwkr"]
 
 [ext_resource type="Script" path="res://VN/GameManager.cs" id="1_0opwj"]
 [ext_resource type="PackedScene" uid="uid://dpqja5n6te8f3" path="res://VN/Textbox/textbox.tscn" id="1_6ixtp"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="1_vdr68"]
 [ext_resource type="Resource" uid="uid://0ygt67qwaea5" path="res://VN/Yarn/Dialogue.tres" id="2_fsm7a"]
-[ext_resource type="Texture2D" uid="uid://bwa412cgktft7" path="res://VN/Backgrounds/TestImage.png" id="3_ylhx5"]
+[ext_resource type="Texture2D" uid="uid://54uy1odgdl4b" path="res://VN/Backgrounds/BG.png" id="3_lyxbn"]
+[ext_resource type="Texture2D" uid="uid://dnjvlcreojkci" path="res://VN/Julie/IMG_1509.PNG" id="4_wnppo"]
 [ext_resource type="PackedScene" uid="uid://dp2hafa5ktis0" path="res://VN/OptionView/option_list_view.tscn" id="5_jlfi6"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="6_8uujo"]
 [ext_resource type="Script" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_d0wj5"]
@@ -12,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bydtdwaqwarv6" path="res://Phone/phone.tscn" id="8_hmu8w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k51u7"]
-texture = ExtResource("3_ylhx5")
+texture = ExtResource("3_lyxbn")
 
 [node name="VNScene" type="Control"]
 layout_mode = 3
@@ -34,6 +35,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_k51u7")
 
+[node name="Julie" type="TextureRect" parent="YarnSpinnerCanvasLayer/Background"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 24.0
+offset_right = 660.0
+offset_bottom = 559.0
+texture = ExtResource("4_wnppo")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="DialogueRunner" type="Control" parent="YarnSpinnerCanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -47,6 +58,7 @@ variableStoragePath = NodePath("../InMemoryVariableStorage")
 dialogueViewPaths = [NodePath("../Textbox"), NodePath("../Option List View")]
 startNode = "Start"
 lineProviderPath = NodePath("../TextLineProvider")
+metadata/_edit_lock_ = true
 
 [node name="VariableDebugText" type="RichTextLabel" parent="YarnSpinnerCanvasLayer"]
 
@@ -54,6 +66,7 @@ lineProviderPath = NodePath("../TextLineProvider")
 offset_top = -237.0
 
 [node name="Option List View" parent="YarnSpinnerCanvasLayer" instance=ExtResource("5_jlfi6")]
+metadata/_edit_lock_ = true
 
 [node name="InMemoryVariableStorage" type="Node" parent="YarnSpinnerCanvasLayer"]
 script = ExtResource("6_8uujo")
@@ -67,6 +80,7 @@ script = ExtResource("7_d0wj5")
 transparent_bg = true
 initial_position = 2
 size = Vector2i(648, 1332)
+visible = false
 unresizable = true
 always_on_top = true
 transparent = true

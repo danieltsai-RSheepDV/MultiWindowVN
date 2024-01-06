@@ -32,8 +32,7 @@ public partial class OpenApp : LinkButton
 		float t = (float) ((Time.GetTicksMsec() - startTime) / transitionTime);
 		if (t > 2f)
 		{
-			homeScreen.Visible = false;
-			screen.Visible = true;
+			((phone) Owner).LoadScreen(screen);
 			_transition.QueueFree();
 			QueueFree();
 			return;

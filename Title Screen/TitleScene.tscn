@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://e40f7hboar63"]
+[gd_scene load_steps=8 format=3 uid="uid://e40f7hboar63"]
 
-[ext_resource type="Texture2D" uid="uid://bwa412cgktft7" path="res://VN/Backgrounds/TestImage.png" id="1_aekvy"]
+[ext_resource type="Texture2D" uid="uid://54uy1odgdl4b" path="res://VN/Backgrounds/BG.png" id="1_yb7ir"]
 [ext_resource type="Texture2D" uid="uid://j7aprwnpe1xu" path="res://Title Screen/Start.png" id="2_qtni2"]
-[ext_resource type="Texture2D" uid="uid://beqhn55a6rwuu" path="res://Title Screen/Gear.png" id="3_v0s8c"]
+[ext_resource type="Texture2D" uid="uid://bryln4oyafend" path="res://Title Screen/Exit.png" id="4_i8gcv"]
+[ext_resource type="Script" path="res://Title Screen/ExitButton.cs" id="5_lagnn"]
+[ext_resource type="Script" path="res://SetInitWindowSize.cs" id="6_ppecw"]
+[ext_resource type="PackedScene" uid="uid://bsrmdtbc87sj0" path="res://Title Screen/titleScreenPhone.tscn" id="6_ruain"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iytn6"]
-texture = ExtResource("1_aekvy")
+texture = ExtResource("1_yb7ir")
 
 [node name="TitleScene" type="Control"]
 layout_mode = 3
@@ -24,28 +27,53 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_iytn6")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="StartButton" type="TextureButton" parent="."]
 modulate = Color(0.843137, 0.733333, 0.588235, 1)
 layout_mode = 0
-offset_left = 768.0
-offset_top = 348.0
-offset_right = 1071.0
-offset_bottom = 441.0
+offset_left = 864.0
+offset_top = 480.0
+offset_right = 1121.0
+offset_bottom = 559.0
 texture_normal = ExtResource("2_qtni2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="ExitButton" type="TextureButton" parent="."]
 modulate = Color(0.843137, 0.733333, 0.588235, 1)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -77.0
-offset_top = 16.0
-offset_right = -9.0
-offset_bottom = 85.0
-grow_horizontal = 0
-texture_normal = ExtResource("3_v0s8c")
+offset_left = 10.0
+offset_top = 18.0
+offset_right = 51.0
+offset_bottom = 60.0
+texture_normal = ExtResource("4_i8gcv")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("5_lagnn")
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+initial_position = 2
+size = Vector2i(648, 1332)
+unresizable = true
+always_on_top = true
+transparent = true
+content_scale_size = Vector2i(648, 1332)
+content_scale_mode = 2
+content_scale_aspect = 1
+script = ExtResource("6_ppecw")
+
+[node name="Phone" parent="Window" instance=ExtResource("6_ruain")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 123.0
+offset_right = 371.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 70
+text = "Snow"
+
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="Pressed"]

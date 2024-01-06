@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf8i3rj0otdd6"]
+
+[ext_resource type="Script" path="res://Phone/Screens/Home Screen/AppCloseTransition.cs" id="1_p4jrd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4a62"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 648.0
+offset_bottom = 1332.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4a62")
+script = ExtResource("1_p4jrd")

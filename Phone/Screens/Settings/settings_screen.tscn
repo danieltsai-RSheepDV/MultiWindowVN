@@ -1,0 +1,133 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1fribeu7vlx"]
+
+[ext_resource type="Script" path="res://Title Screen/ExitButton.cs" id="1_4romw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy5ki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hhge"]
+bg_color = Color(0.423529, 0.423529, 0.423529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Settings Screen" type="Control"]
+layout_mode = 3
+anchor_right = 0.5625
+anchor_bottom = 2.00309
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hy5ki")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8hhge")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Volume"
+
+[node name="Control" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_font_sizes/font_size = 20
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+
+[node name="Control2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_font_sizes/font_size = 20
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control2"]
+layout_mode = 2
+
+[node name="Control3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_font_sizes/font_size = 20
+text = "SFX
+"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Control3"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8hhge")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+underline = 2
+script = ExtResource("1_4romw")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/LinkButton" to="MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/LinkButton" method="Pressed"]
