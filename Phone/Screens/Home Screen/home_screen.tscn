@@ -80,26 +80,11 @@ layout_mode = 2
 [node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/ContactsApp" index="1"]
 text = "Contacts"
 
-[node name="MapsApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
+[node name="FishingApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
-disabled = true
 
-[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/MapsApp" index="1"]
-text = "Disabled"
-
-[node name="MailApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
-layout_mode = 2
-disabled = true
-
-[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/MailApp" index="1"]
-text = "Disabled"
-
-[node name="ClockApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
-layout_mode = 2
-disabled = true
-
-[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/ClockApp" index="1"]
-text = "Disabled"
+[node name="Label" parent="VBox/Content/VSplitContainer/GridContainer/FishingApp" index="1"]
+text = "Contacts"
 
 [node name="SettingsApp" parent="VBox/Content/VSplitContainer/GridContainer" instance=ExtResource("1_e3b6a")]
 layout_mode = 2
@@ -124,31 +109,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PhoneApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
-custom_minimum_size = Vector2(125, 150)
-layout_mode = 2
-script = ExtResource("2_w8emj")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp"]
-custom_minimum_size = Vector2(95, 95)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -47.5
-offset_right = 47.5
-offset_bottom = 47.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
-
 [node name="MessageApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
 custom_minimum_size = Vector2(125, 150)
 layout_mode = 2
@@ -156,31 +116,6 @@ script = ExtResource("2_w8emj")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp"]
-custom_minimum_size = Vector2(95, 95)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -47.5
-offset_right = 47.5
-offset_bottom = 47.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
-
-[node name="BrowserApp" type="LinkButton" parent="VBox/Shelf/PanelContainer/HBoxContainer" groups=["App"]]
-custom_minimum_size = Vector2(125, 150)
-layout_mode = 2
-script = ExtResource("2_w8emj")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp"]
 custom_minimum_size = Vector2(95, 95)
 layout_mode = 1
 anchors_preset = 8
@@ -224,14 +159,10 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yddwj")
 
-[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp" to="VBox/Shelf/PanelContainer/HBoxContainer/PhoneApp" method="OnPressed"]
 [connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp" to="VBox/Shelf/PanelContainer/HBoxContainer/MessageApp" method="OnPressed"]
-[connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp" to="VBox/Shelf/PanelContainer/HBoxContainer/BrowserApp" method="OnPressed"]
 [connection signal="pressed" from="VBox/Shelf/PanelContainer/HBoxContainer/CameraApp" to="VBox/Shelf/PanelContainer/HBoxContainer/CameraApp" method="OnPressed"]
 
 [editable path="VBox/Content/VSplitContainer/GridContainer/FilesApp"]
 [editable path="VBox/Content/VSplitContainer/GridContainer/ContactsApp"]
-[editable path="VBox/Content/VSplitContainer/GridContainer/MapsApp"]
-[editable path="VBox/Content/VSplitContainer/GridContainer/MailApp"]
-[editable path="VBox/Content/VSplitContainer/GridContainer/ClockApp"]
+[editable path="VBox/Content/VSplitContainer/GridContainer/FishingApp"]
 [editable path="VBox/Content/VSplitContainer/GridContainer/SettingsApp"]
